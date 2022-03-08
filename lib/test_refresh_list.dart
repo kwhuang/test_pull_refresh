@@ -22,8 +22,10 @@ class _TestRefreshListState extends State<TestRefreshList> {
   @override
   Widget build(BuildContext context) {
     return AppSimpleRefresh<int>(
+        isSliver: true,
         haveRefresh: false,
         pageSize: 10,
+        physics: const NeverScrollableScrollPhysics(),
         loadDataCallBack: loadDataCallBack,
         buildListItemCallBack: ( _, int data, int index) {
           return Container(
